@@ -1,6 +1,5 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-import pyautogui
+from pyautogui import typewrite
 
 speed_site = "https://typing-speed-test.aoeu.eu/?lang=en"
 
@@ -10,6 +9,6 @@ driver.get(speed_site)
 currentword = str(driver.find_element_by_css_selector("span.currentword.currentword").text)
 
 while currentword != '':
-    pyautogui.typewrite(currentword + ' ', 0)
-    print('Word  \'' + currentword + '\' typed into speed test')
+    typewrite(currentword + ' ', 0)
     currentword = str(driver.find_element_by_css_selector("span.currentword.currentword").text)
+    
